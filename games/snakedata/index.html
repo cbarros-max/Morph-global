@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+    <title>SnakeData</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <style>
+      .estilo{
+        background: #231F20;
+      }
+      @media only screen and (max-width:600px) {
+        estilo{
+          /* position: absolute; */
+          width: 70wv; 
+          height: 70hv;
+        }
+      }
+    </style>
+  </head>
+
+  <body style="text-align: center; margin: 0; padding: 0;">
+    <div style="position: absolute; width: 100%; height: 100%; text-align: center;">
+      <canvas id="unity-canvas" width=510 height=900 class="estilo"></canvas>
+    </div>
+    <script src="Build/SnakeDataCel.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/SnakeDataCel.data",
+        frameworkUrl: "Build/SnakeDataCel.framework.js",
+        codeUrl: "Build/SnakeDataCel.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Readiness Global",
+        productName: "Redinauta",
+        productVersion: "1.0",  
+        matchWebGLToCanvasSize: true, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+      if ( navigator.userAgentData.mobile ) {
+        var canvas = document.getElementById("unity-canvas");
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+      }
+
+    </script>
+  </body>
+</html>

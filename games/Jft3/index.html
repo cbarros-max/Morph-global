@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+<style>
+    @font-face {
+       font-family: pixelado;
+       src: url("INVASION2000.TTF");
+    }
+  
+    body {
+        color: white;
+        font-family: pixelado;
+        font-size: 3em;
+    }
+    .container {
+        height: 95vh;
+    }
+    
+    .vertical-center {
+        margin: 0;
+        position: absolute;
+        width: 98vw;
+        text-align: center;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+</style>
+<body style="background-color: black;">
+    <div class="container">
+        <div class="vertical-center" id="msg">
+            Presione una tecla
+        </div>
+    </div>
+<script>
+
+    document.addEventListener('keypress', logKey);
+    document.addEventListener("touchstart", () => { logKey(null)}, true);
+
+    function logKey(e) {
+        window.location="play.html";
+    }
+    if ( navigator.userAgentData.mobile ) {
+        document.getElementById("msg").innerHTML = "Toca la pantalla";
+    }
+
+</script>
+</body>    
+</html>
